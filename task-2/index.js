@@ -8,6 +8,26 @@
  * @returns {Boolean}
  */
 function haveSameItems(arr1, arr2) {
+  let arrLength = arr1.length;
+  if (arrLength !== arr2.length) return false;
+  const arr1Obj = {};
+
+  // convert received arr1 to obj
+  for (let i=0; i < arrLength; i++) {
+    let key = arr1[i];
+    arr1Obj[key] = key;
+  }
+
+  // find equal elements and exclude them from the following find
+  for (let i = 0; i < arrLength; i++) {
+    let key = arr2[i];
+
+    if (arr1Obj[key]) {
+      arr1Obj[key] = false;
+    } else {
+      return false;
+    }
+  }
   return true;
 }
 
