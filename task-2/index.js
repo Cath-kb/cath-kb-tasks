@@ -15,7 +15,7 @@ function haveSameItems(arr1, arr2) {
   // convert received arr1 to obj
   for (let i=0; i < arrLength; i++) {
     let key = arr1[i];
-    arr1Obj[key] = key;
+    arr1Obj[key] = true;
   }
 
   // find equal elements and exclude them from the following find
